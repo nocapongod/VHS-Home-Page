@@ -5,18 +5,20 @@
   <meta charset="UTF-8">
   <title>School Home Page</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Add favicon -->
   <link rel="icon" type="image/png" href="Icon.png">
+  <!-- Correct Font Awesome 6.4.2 Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
   <style>
     :root {
-      --bg-color: #102a43; /* Dark blue-grey */
-      --header-bg: #1b365d; /* Darker blue */
-      --card-bg: #152b47; /* Medium blue-grey */
-      --card-hover-bg: #00bfb2; /* Teal */
-      --accent-color: #00bfb2; /* Teal */
-      --text-color: #e0e0e0; /* Light grey */
+      --bg-color: #102a43;
+      --header-bg: #1b365d;
+      --card-bg: #152b47;
+      --card-hover-bg: #00bfb2;
+      --accent-color: #00bfb2;
+      --text-color: #e0e0e0;
       --shadow-dark: rgba(0, 0, 0, 0.8);
-      --shadow-light: rgba(0, 191, 178, 0.4); /* Teal shadow */
+      --shadow-light: rgba(0, 191, 178, 0.4);
     }
 
     body {
@@ -26,6 +28,7 @@
       margin: 0;
       padding: 0;
       line-height: 1.6;
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
     header {
@@ -36,13 +39,6 @@
       box-shadow: 0 4px 15px var(--shadow-dark);
     }
 
-    .logo {
-      max-width: 150px;
-      width: 100%;
-      margin-bottom: 1.5rem;
-      filter: drop-shadow(0 0 10px var(--accent-color));
-    }
-
     h1 {
       margin: 0;
       font-size: 2.8rem;
@@ -50,12 +46,6 @@
       color: var(--accent-color);
       text-shadow: 0 0 15px var(--shadow-light);
       font-weight: 700;
-    }
-
-    p {
-      font-size: 1.1rem;
-      color: var(--text-color);
-      margin-top: 0.5rem;
     }
 
     main {
@@ -85,19 +75,18 @@
       background: var(--card-hover-bg);
       transform: translateY(-8px) scale(1.03);
       box-shadow: 0 8px 25px var(--shadow-light);
-      border-color: var(--accent-color);
     }
 
     .link-card i {
       margin-bottom: 1rem;
-      font-size: 4.5rem; /* Slightly larger icons */
+      font-size: 4.5rem;
       color: var(--accent-color);
       text-shadow: 0 0 10px var(--shadow-light);
-      transition: color 0.3s ease-in-out;
     }
 
-    .link-card:hover i {
-      color: var(--text-color);
+    /* Accessibility: text remains readable on hover */
+    .link-card:hover i, .link-card:hover p {
+      color: var(--bg-color);
     }
 
     .link-card a {
@@ -119,152 +108,198 @@
     }
 
     footer {
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
       padding: 1.5rem;
       font-size: 1rem;
       color: var(--text-color);
       background: var(--header-bg);
       border-top: 3px solid var(--accent-color);
-      box-shadow: 0 -4px 15px var(--shadow-dark);
+    }
+
+    #colorBtn {
+      padding: 8px 15px;
+      background-color: var(--accent-color);
+      color: var(--bg-color);
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.2s ease;
+    }
+
+    #colorBtn:hover {
+      transform: scale(1.05);
     }
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body>
   <header>
-    
     <h1>Vincentia High School</h1>
-    
   </header>
+
   <main>
     <div class="link-card">
-      <a href="https://portal.education.nsw.gov.au/" target="_blank">
-        <i class="fas fa-school fa-4x"></i>
+      <a href="https://portal.education.nsw.gov.au" target="_blank">
+        <i class="fa-solid fa-school"></i>
         <p>NSW Portal</p>
       </a>
     </div>
     <div class="link-card">
-      <a href="https://mail.google.com/a/education.nsw.gov.au" target="_blank">
-                <i class="fas fa-envelope fa-4x"></i>
+      <a href="https://mail.google.com" target="_blank">
+        <i class="fa-solid fa-envelope"></i>
         <p>Gmail</p>
       </a>
     </div>
     <div class="link-card">
-      <a href="http://classroom.google.com/a/education.nsw.gov.au/" target="_blank">
-        <i class="fas fa-chalkboard fa-4x"></i>
+      <a href="http://classroom.google.com" target="_blank">
+        <i class="fa-solid fa-chalkboard"></i>
         <p>Google Classroom</p>
       </a>
     </div>
     <div class="link-card">
-      <a href="https://vincentiahs.sentral.com.au/auth/portal?action=login_student" target="_blank">
-        <i class="fas fa-user-graduate fa-4x"></i>
+      <a href="https://vincentiahs.sentral.com.au" target="_blank">
+        <i class="fa-solid fa-user-graduate"></i>
         <p>Sentral Student Login</p>
       </a>
     </div>
     <div class="link-card">
-      <a href="https://github.com/LucaMurdoch" target="_blank">
-        <i class="fab fa fa-github fa-4x"></i>
+      <a href="https://github.com" target="_blank">
+        <i class="fa-brands fa-github"></i>
         <p>Luca Murdoch Github</p>
       </a>
     </div>
-    <!-- Updated link card begins here -->
     <div class="link-card">
-      <a href="https://lucamurdoch.github.io/Luca-s-Web-Hub/" target="_blank">
-        <i class="fas fa-star fa-4x"></i>
+      <a href="https://lucamurdoch.github.io" target="_blank">
+        <i class="fa-solid fa-star"></i>
         <p>Luca's Web Hub</p>
       </a>
     </div>
-    <!-- Updated link card ends here -->
     <div class="link-card">
-      <a href="https://vincentia-h.schools.nsw.gov.au/" target="_blank">
-        <i class="fas fa-globe fa-4x"></i>
+      <a href="https://vincentia-h.schools.nsw.gov.au" target="_blank">
+        <i class="fa-solid fa-globe"></i>
         <p>School Website</p>
       </a>
     </div>
-    
     <div class="link-card">
-      <a href="https://library.det.nsw.edu.au/" target="_blank">
-        <i class="fas fa-book fa-4x"></i>
+      <a href="https://library.det.nsw.edu.au" target="_blank">
+        <i class="fa-solid fa-book"></i>
         <p>Library</p>
       </a>
     </div>
     <div class="link-card">
-      <a href="https://online.clickview.com.au/" target="_blank">
-        <i class="fas fa-video fa-4x"></i>
+      <a href="https://online.clickview.com.au" target="_blank">
+        <i class="fa-solid fa-video"></i>
         <p>ClickView</p>
       </a>
     </div>
     <div class="link-card">
-      <a href="http://10.220.128.22:9191/user" target="_blank">
-        <i class="fas fa-print fa-4x"></i>
+      <a href="http://10.220.128.22" target="_blank">
+        <i class="fa-solid fa-print"></i>
         <p>BYOD Print</p>
       </a>
     </div>
     <div class="link-card">
-      <a href="https://www.tinkercad.com/" target="_blank">
-        <i class="fas fa-desktop fa-4x"></i>
+      <a href="https://www.tinkercad.com" target="_blank">
+        <i class="fa-solid fa-desktop"></i>
         <p>Tinkercad</p>
       </a>
     </div>
     <div class="link-card">
-      <a href="https://outlook.office.com/calendar/" target="_blank">
-        <i class="fas fa-calendar-alt fa-4x"></i>
+      <a href="https://outlook.office.com" target="_blank">
+        <i class="fa-solid fa-calendar-days"></i>
         <p>School Calendar</p>
       </a>
     </div>
     <div class="link-card">
-      <a href="https://education.nsw.gov.au/teaching-and-learning" target="_blank">
-        <i class="fas fa-chalkboard-teacher fa-4x"></i>
+      <a href="https://education.nsw.gov.au" target="_blank">
+        <i class="fa-solid fa-chalkboard-user"></i>
         <p>Teaching & Learning</p>
       </a>
     </div>
     <div class="link-card">
-      <a href="https://onedrive.live.com/" target="_blank">
-        <i class="fas fa-cloud fa-4x"></i>
+      <a href="https://onedrive.live.com" target="_blank">
+        <i class="fa-solid fa-cloud"></i>
         <p>OneDrive</p>
       </a>
     </div>
     <div class="link-card">
-      <a href="https://www.office.com/" target="_blank">
-        <i class="fab fa-microsoft fa-4x"></i>
+      <a href="https://www.office.com" target="_blank">
+        <i class="fa-brands fa-microsoft"></i>
         <p>Office 365</p>
       </a>
     </div>
     <div class="link-card">
-      <a href="https://drive.google.com/" target="_blank">
-        <i class="fab fa-google-drive fa-4x"></i>
+      <a href="https://drive.google.com" target="_blank">
+        <i class="fa-brands fa-google-drive"></i>
         <p>Google Drive</p>
       </a>
     </div>
     <div class="link-card">
-      <a href="https://docs.google.com/" target="_blank">
-        <i class="fas fa-file-alt fa-4x"></i>
+      <a href="https://docs.google.com" target="_blank">
+        <i class="fa-solid fa-file-lines"></i>
         <p>Google Docs</p>
       </a>
     </div>
     <div class="link-card">
-      <a href="https://sheets.google.com/" target="_blank">
-                <i class="fas fa-table fa-4x"></i>
+      <a href="https://sheets.google.com" target="_blank">
+        <i class="fa-solid fa-table-cells"></i>
         <p>Google Sheets</p>
       </a>
     </div>
     <div class="link-card">
-      <a href="https://slides.google.com/" target="_blank">
-        <i class="fas fa-file-powerpoint fa-4x"></i>
+      <a href="https://slides.google.com" target="_blank">
+        <i class="fa-solid fa-file-powerpoint"></i>
         <p>Google Slides</p>
       </a>
     </div>
     <div class="link-card">
-      <a href="https://login.renaissance.com/13267791-e829-4bb5-9cf4-12ae5e5c13c0?state=1520cbe8-18bd-44cf-8044-5bb84b1d1293" target="_blank">
-        <i class="fas fa-r fa-4x"></i>
+      <a href="https://login.renaissance.com" target="_blank">
+        <i class="fa-solid fa-registered"></i>
         <p>Renaissance</p>
       </a>
     </div>
   </main>
-  <footer>
-    &copy; 2025 Vincentia High School. All rights reserved.
-  </footer>
-</body>
 
+  <footer>
+    <span>&copy; 2025 Vincentia High School. All rights reserved.</span>
+    <button id="colorBtn" onclick="setRandomColors()">
+      <i class="fa-solid fa-palette"></i> Wyatt's Button
+    </button>
+  </footer>
+
+  <script>
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    function setRandomColors() {
+      const root = document.querySelector(':root');
+      
+      const newBg = getRandomColor();
+      const newHeader = getRandomColor();
+      const newCard = getRandomColor();
+      const newAccent = getRandomColor();
+      const newText = getRandomColor();
+
+      root.style.setProperty('--bg-color', newBg);
+      root.style.setProperty('--header-bg', newHeader);
+      root.style.setProperty('--card-bg', newCard);
+      root.style.setProperty('--accent-color', newAccent);
+      root.style.setProperty('--text-color', newText);
+      root.style.setProperty('--shadow-light', newAccent + '66');
+    }
+  </script>
+</body>
 </html>
